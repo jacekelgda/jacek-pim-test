@@ -20,3 +20,10 @@ functions:
       - http:
           path: api/foo
           method: post
+  deps_get:
+    handler: src/actions/deps/depsApiHandler.get
+    events:
+      - http:
+          path: api/deps
+          method: get
+
