@@ -1,0 +1,22 @@
+service: jacek-pim-service
+
+plugins:
+  - serverless-openwhisk
+
+provider:
+  name: openwhisk
+  ignore_certs: true
+
+functions:
+  foo_get:
+    handler: src/actions/foo/fooApiHandler.get
+    events:
+      - http:
+          path: api/foo
+          method: get
+  foo_post:
+    handler: src/actions/foo/fooApiHandler.post
+    events:
+      - http:
+          path: api/foo
+          method: post
